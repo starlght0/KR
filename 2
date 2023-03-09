@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a = 10; 
+    int* arr = new int[a]; 
+    int count = 0; 
+    int sum = 0; 
+
+    int input; 
+    while (true) {
+        cout << "Enter number, -1 to stop: ";
+        cin >> input;
+        if (input == -1) {
+            break; 
+        } else if (input < -1) {
+            cout << "Invalid input\n"; 
+        } else {
+            if (count == a) {
+                
+                int* temp = new int[a*2];
+                for (int i = 0; i < a; i++) {
+                    temp[i] = arr[i];
+                }
+                delete[] arr;
+                arr = temp;
+                a *= 2;
+            }
+            arr[count] = input;
+            count++;
+            sum += input;
+        }
+    }
+
+    
+    cout << "Summa: " << sum << endl;
+    
+    cout << "Number: " << count << endl;
+    
+    cout << "chisla: ";
+    for (int i = 0; i < count; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    delete[] arr; 
+    return 0;
+}
