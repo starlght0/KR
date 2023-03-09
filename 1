@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RUS");
+    
+    int sss,nnn = 0;
+    cin >> sss;
+    for (int i=sss+1; i <=-1; i++)
+    {
+        if (-i%2 == 1)
+        nnn= i + nnn;
+    }
+    cout << nnn;
+    
+    return 0;
+}
